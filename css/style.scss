@@ -1,0 +1,433 @@
+/*=====================
+import
+=====================*/
+@import "../css/base.scss";
+
+/*=====================
+header
+=====================*/
+header {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 100;
+    transition: all 1s ease 0s;
+    background: rgba(219, 219, 219, 0.315);
+
+    .header-inner {
+        width: 100%;
+        max-width: 1080px;
+        margin: 0 auto;
+        display: block;
+
+        ul {
+            display: flex;
+            justify-content: flex-end;
+            @include mq() {
+                justify-content: space-around;
+            }
+            .navbar {
+                margin-right: 45px;
+                padding: 20px 0;
+                transition: all 1s ease 0s;
+                @include mq() {
+                    margin: 0;
+                }
+                a {
+                    font-size: 16px;
+                    font-weight: 500;
+                    letter-spacing: -0.4px;
+                    position: relative;
+                    color: #333;
+                    @include mq() {
+                        font-size: 0.9em;
+                    }
+                    &:before {
+                        content: "";
+                        width: 0;
+                        left: 50%;
+                        bottom: 0;
+                        transition: all 0.3s ease;
+                        border-bottom: 3px solid rgb(204, 69, 94);
+                        position: absolute;
+                        display: block;
+                    }
+                    &:hover:before {
+                        width: 50%;
+                        border-bottom: 3px solid rgb(204, 69, 94);
+                    }
+                    &:after {
+                        content: "";
+                        width: 0;
+                        right: 50%;
+                        bottom: 0;
+                        transition: all 0.3s ease;
+                        border-bottom: 3px solid rgb(204, 69, 94);
+                        position: absolute;
+                        display: block;
+                    }
+                    &:hover:after {
+                        width: 50%;
+                        border-bottom: 3px solid rgb(204, 69, 94);
+                    }
+                }
+            }
+
+            .navbar-active {
+                padding: 12px 0 15px 0;
+            }
+        }
+    }
+}
+
+/*=====================
+top
+=====================*/
+.top {
+    width: 100%;
+    min-height: 100vh;
+    transition: all 1s;
+    background-attachment: fixed;
+    user-select: none;
+    position: relative;
+    background: -moz-linear-gradient(65deg, #f13f79, #ffc778);
+    background: -webkit-linear-gradient(65deg, #f13f79, #ffc778);
+    background: linear-gradient(25deg, #f13f79, #ffc778);
+
+    .top_text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        border-bottom: 1px solid #333;
+        @include mq() {
+            border-bottom: 0px solid #000;
+        }
+    }
+
+    .top_icon {
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .fab {
+            border: 1px solid #fff;
+            background: #fff;
+            border-radius: 50%;
+            font-size: 24px;
+            padding: 15px;
+            margin: 0 5px;
+            @include mq() {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+        .fa-twitter {
+            color: #1da1f2;
+        }
+        .fa-github {
+            color: #333;
+        }
+    }
+
+    h1 {
+        transition: opacity 2s ease 0.5s;
+        text-align: center;
+        font-size: 40px;
+        color: white;
+        font-family: Averta, sans-serif, sans-serif;
+        @include mq() {
+            font-size: 32px;
+        }
+    }
+}
+
+.hide {
+    opacity: 0;
+}
+
+.title {
+    font-size: 40px;
+    text-align: center;
+    padding: 20px 0;
+    font-family: Averta, sans-serif, sans-serif;
+}
+/*=====================
+about
+=====================*/
+.about {
+    background: #fffaff;
+    padding: 80px 0 120px;
+    @include mq() {
+        padding-bottom: 80px;
+    }
+
+    .about_items {
+        max-width: 100%;
+        width: 1200px;
+        margin: 0 auto;
+        padding: 30px 0;
+        display: flex;
+        justify-content: center;
+        @include mq() {
+            width: 90%;
+            flex-direction: column;
+        }
+
+        .item_left {
+            margin-right: 100px;
+            align-self: flex-end;
+            @include mq() {
+                text-align: center;
+                width: 80%;
+                padding-bottom: 30px;
+                margin: 0 auto;
+            }
+            img {
+                width: 250px;
+                border-radius: 7px;
+            }
+        }
+        .item_right {
+            width: 450px;
+            text-align: left;
+            text-justify: inter-ideograph;
+            @include mq() {
+                width: 100%;
+            }
+
+            h2 {
+                text-align: left;
+                @include mq() {
+                    text-align: center;
+                }
+            }
+
+            p {
+                margin-bottom: 8px;
+            }
+
+            .name {
+                position: relative;
+                margin-bottom: 20px;
+                font-size: 24px;
+
+                &::after {
+                    content: "NAOKI KUHARA";
+                    position: absolute;
+                    bottom: -10px;
+                    display: block;
+                    font-size: 12px;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+    }
+}
+.page_link {
+    font-weight: 500;
+    color: rgb(190, 20, 34);
+}
+
+/*=====================
+timeline
+=====================*/
+.time_line {
+    padding: 60px 0 150px;
+    .timeline {
+        width: 1200px;
+        margin: 30px auto;
+        @include mq() {
+            width: 100%;
+        }
+        li {
+            @include mq() {
+                margin-bottom: 40px;
+                font-size: 0.9em;
+            }
+        }
+    }
+}
+
+/* for Desktop */
+@media (min-width: 640px) {
+    .timeline > li {
+        overflow: hidden;
+        margin: 0;
+        position: relative;
+    }
+    .timeline-date {
+        width: 110px;
+        float: left;
+        margin-top: 20px;
+    }
+    .timeline-content {
+        width: 75%;
+        float: left;
+        border-left: 3px #e5e5d1 solid;
+        padding-left: 30px;
+        padding-bottom: 60px;
+    }
+    .timeline-content:before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background: #6fc173;
+        position: absolute;
+        left: 106px;
+        top: 24px;
+        border-radius: 100%;
+    }
+}
+/*=====================
+skills
+=====================*/
+.skills {
+    background: #fffaff;
+    padding: 0 20px 60px;
+    @include mq() {
+        padding-bottom: 60px;
+    }
+
+    .skills_inner {
+        background: #333;
+        color: white;
+        padding: 80px 0;
+        max-width: 100%;
+        width: 1200px;
+        margin: 0 auto;
+        border-radius: 7px;
+        @include mq() {
+            padding: 40px 0 60px;
+        }
+
+        .items {
+            width: 900px;
+            margin: 60px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            @include mq() {
+                width: 100%;
+                margin: 30px 0;
+            }
+
+            .item {
+                text-align: center;
+                width: 20%;
+                padding: 15px 0;
+                margin: 0 10px;
+                margin-bottom: 30px;
+                border: 1px solid #fff;
+                border-radius: 4px;
+                font-size: 18px;
+                letter-spacing: 3px;
+                font-weight: 600;
+                color: #333;
+                background: #fff;
+                @include mq() {
+                    font-size: 0.9em;
+                    width: 40%;
+                }
+            }
+        }
+    }
+}
+
+/*=====================
+works
+=====================*/
+.works {
+    background: #fffaff;
+    padding: 30px 0 60px;
+
+    .works_items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .works_item {
+            width: 35%;
+            margin: 50px;
+            background: rgb(231, 231, 231);
+            border-radius: 7px;
+            border: 1px solid rgb(209, 209, 209);
+            transition: all 0.4s;
+            @include mq() {
+                margin: 40px 0;
+                width: 80%;
+            }
+
+            &:hover {
+                transform: translateY(-6px);
+                box-shadow: 10px 10px 7px rgb(209, 209, 209);
+            }
+
+            img {
+                border-radius: 7px 7px 0 0;
+            }
+
+            .works_text {
+                width: 85%;
+                margin: 0px auto;
+                padding: 20px 0;
+                text-align: center;
+                h3 {
+                    margin-bottom: 25px;
+                }
+                .main_text {
+                    text-align: left;
+                    margin: 15px 20px;
+                }
+            }
+        }
+    }
+}
+
+/*=====================
+footer
+=====================*/
+footer {
+    background: #253031;
+    padding: 50px 0;
+
+    .footer_text {
+        color: white;
+        text-align: center;
+        @include mq() {
+            font-size: 14px;
+        }
+    }
+
+    .footer_icon {
+        text-align: center;
+        margin-top: 30px;
+
+        .fab {
+            background: #616060;
+            border-radius: 50%;
+            font-size: 16px;
+            padding: 8px;
+            margin: 0 5px;
+            color: #9a9c9e;
+        }
+    }
+}
+
+.fa-chevron-up {
+    position: fixed;
+    right: 6%;
+    bottom: 10%;
+    font-size: 24px;
+    border: 1px solid #333;
+    padding: 13px;
+    background: #ffffff;
+    z-index: 10;
+    cursor: pointer;
+    transition: opacity 1s;
+    &:hover {
+        color: red;
+    }
+}
