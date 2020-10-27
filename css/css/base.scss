@@ -1,0 +1,113 @@
+// -----
+// 初期化
+// -----
+
+$color-background-base: #fffaff; // 背景色
+$color-text-base: #3e3e3e; // テキスト色
+$font-family-default: "游ゴシック体", "Yu Gothic", yugothic, "ヒラギノ角ゴ Pro",
+    "Hiragino Kaku Gothic Pro", "メイリオ", meiryo, "MS Pゴシック", "MS PGothic",
+    sans-serif; // 標準フォント
+$font-family-base: $font-family-default;
+$font-size-base: 16px;
+$font-weight-base: 400;
+$line-height-base: 1.6;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    color: $color-text-base;
+    line-height: $line-height-base;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: $color-background-base 0% 0% no-repeat padding-box;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    // max-width: 1366px;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: none;
+}
+
+// 余白
+$padding-tab: 24px;
+$padding-sp: 16px;
+
+//マップ型変数breakpointsを定義  ///max-width
+$breakpoints: (
+    //キー  値
+        "sm": "screen and (max-width: 576px)",
+    "md": "screen and (max-width: 768px)",
+    "lg": "screen and (max-width: 992px)",
+    "xl": "screen and (max-width: 1200px)"
+) !default;
+
+//メディアクエリ用のmixinを定義。デフォ値はmd
+@mixin mq($breakpoint: md) {
+    //map-get(マップ型変数, キー)で値を取得
+    @media #{map-get($breakpoints, $breakpoint)} {
+        //この中をカスタムできる
+        @content;
+    }
+}
+
+//インナーの広さ
+// $layout-width-inner: 1330px;
+
+// 余白
+$padding-tab: 24px;
+$padding-sp: 16px;
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.clear::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+li {
+    list-style: none;
+}
+
+// -----
+// 共通パーツ
+// -----
+
+// インナー
+.inner {
+    // width: $layout-width-inner;
+    max-width: 100%;
+    margin: 0 auto;
+    height: inherit;
+
+    @include mq("xl") {
+        padding-left: $padding-sp;
+        padding-right: $padding-sp;
+    }
+}
