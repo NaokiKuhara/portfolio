@@ -68,6 +68,10 @@ li {
   }
 }
 
+.under-line {
+  text-decoration: underline;
+}
+
 /*=====================
 header
 =====================*/
@@ -412,9 +416,9 @@ skills
 .skills .skills_inner {
   background: #333;
   color: white;
-  padding: 80px 0;
+  padding: 70px 0;
   max-width: 100%;
-  width: 1200px;
+  width: 1300px;
   margin: 0 auto;
   border-radius: 7px;
 }
@@ -426,24 +430,23 @@ skills
 }
 
 .skills .skills_inner .items {
-  width: 900px;
+  width: 500px;
   margin: 60px auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 @media screen and (max-width: 768px) {
   .skills .skills_inner .items {
     width: 100%;
-    margin: 30px 0;
+    margin: 30px;
   }
 }
 
 .skills .skills_inner .items .item {
   text-align: center;
-  width: 20%;
-  padding: 15px 0;
+  padding: 10px;
   margin: 0 10px;
   margin-bottom: 30px;
   border: 1px solid #fff;
@@ -451,14 +454,11 @@ skills
   font-size: 18px;
   letter-spacing: 3px;
   font-weight: 600;
-  color: #333;
-  background: #fff;
 }
 
 @media screen and (max-width: 768px) {
   .skills .skills_inner .items .item {
     font-size: 0.9em;
-    width: 40%;
   }
 }
 
@@ -502,7 +502,7 @@ works
 }
 
 .works .works_items .works_item .works_text {
-  width: 85%;
+  width: 88%;
   margin: 0px auto;
   padding: 20px 0;
   text-align: center;
@@ -515,6 +515,43 @@ works
 .works .works_items .works_item .works_text .main_text {
   text-align: left;
   margin: 15px 20px;
+}
+
+/*=====================
+blog
+=====================*/
+.posts_body {
+  text-align: center;
+  font-size: 18px;
+}
+
+#wordpress_blog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#wordpress_blog .wp-article {
+  width: 30%;
+  margin: 70px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  #wordpress_blog .wp-article {
+    margin: 40px 0;
+    width: 80%;
+  }
+}
+
+#wordpress_blog .wp-article a {
+  font-size: 23px;
+  color: #3d60fa;
+  font-weight: normal;
+}
+
+#wordpress_blog .wp-article p {
+  font-size: 20px;
 }
 
 /*=====================
